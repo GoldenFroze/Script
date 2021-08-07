@@ -19,7 +19,6 @@ repo sync -j$(nproc --ignore=8)
 echo "SYNC OF ROM AND DEVICE SOURCES COMPLETED!"
 echo "Matching device source to ROM.  Beginning file alterations"
 sed -i "s|vendor/arrow/config|vendor/$ROMNAME/config|" device/xiaomi/ginkgo/arrow_ginkgo.mk
-sed -i "s|common_full_phone.mk|common.mk|" device/xiaomi/ginkgo/arrow_ginkgo.mk
 sed -i "s|arrow_ginkgo|$ROMNAME\_ginkgo|" device/xiaomi/ginkgo/arrow_ginkgo.mk
 sed -i "s|arrow_|$ROMNAME\_|" device/xiaomi/ginkgo/AndroidProducts.mk
 cp device/xiaomi/ginkgo/arrow.dependencies device/xiaomi/ginkgo/$ROMNAME.dependencies
